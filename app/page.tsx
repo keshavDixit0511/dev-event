@@ -10,12 +10,15 @@ const page = () => {
       <h1 className="text-center">The hub for every Dev <br/> Event you can&apos;t miss</h1>
       <p className="text-center mt-5">Hackathons, Meetups, and Confrences, All in one Place.</p>
 
+      {/* this is a button  */}
       <ExploreBtn />
 
       <div className='mt-20 space-y-7'>
         <h3>
           Featured Events
         </h3>
+        
+        {/* Events list goes here */}
         <ul className='events list-none'>
           {events.map((event) => (
             <li key={event.title}>
