@@ -6,6 +6,7 @@ import mongoose, { type ConnectOptions } from 'mongoose';
  * Keep this value in your environment configuration (e.g. .env.local)
  * and NEVER hard-code credentials in source code.
  */
+
 const MONGODB_URI: string | undefined = process.env.MONGODB_URI;
 
 if (!MONGODB_URI) {
@@ -18,6 +19,7 @@ if (!MONGODB_URI) {
  * Caching the connection prevents creating multiple connections during
  * Next.js hot-reloads in development and across API route re-usage.
  */
+
 interface MongooseCache {
   conn: typeof mongoose | null;
   promise: Promise<typeof mongoose> | null;
@@ -33,6 +35,7 @@ declare global {
  * module reloads. In production, the module is only loaded once per
  * server process so this is effectively a singleton.
  */
+
 const cached: MongooseCache = global._mongooseCache ?? {
   conn: null,
   promise: null,
